@@ -87,13 +87,32 @@ ID: 14 | Cliente: CLI004 | Data: 2026-03-20 | Valor: R$ 11.500,00
 
 ---
 
+## 🧩 Funções Implementadas
+
+O código está organizado em 10 funções com responsabilidade única:
+
+| Função | Responsabilidade |
+|--------|-----------------|
+| `brl(valor)` | Formata valor para o padrão monetário brasileiro (R$ 1.234,56) |
+| `ler_transacoes(caminho)` | Lê o CSV com `csv.DictReader` e retorna registros brutos |
+| `validar_data(data_texto)` | Converte texto para `datetime` no formato `AAAA-MM-DD` |
+| `validar_valor(valor_texto)` | Converte texto para `float` e exige valor > 0 |
+| `validar_transacao(linha)` | Valida uma linha completa usando as funções auxiliares acima |
+| `calcular_metricas_mes(valores, credito, debito)` | Calcula as 7 métricas de um mês |
+| `gerar_relatorio(transacoes)` | Agrupa por mês e monta o dicionário de métricas |
+| `identificar_suspeitas(transacoes, limite)` | Filtra transações acima do `LIMITE_SUSPEITO` |
+| `exibir_relatorio(...)` | Imprime o relatório formatado no terminal |
+| `salvar_json(...)` | Serializa o resultado em `relatorio.json` |
+
+---
+
 ## ✅ Requisitos Implementados
 
 | # | Requisito | Status |
 |---|-----------|--------|
 | R1 | Leitura com `csv.DictReader` (sem pandas) | ✅ |
 | R2 | Validação com 5 regras + resumo de limpeza | ✅ |
-| R3 | ≥ 4 funções com responsabilidade única | ✅ |
+| R3 | 10 funções com responsabilidade única | ✅ |
 | R4 | `datetime.strptime`, extração de mês, intervalo em dias | ✅ |
 | R5 | 7 métricas mensais (qtd, crédito, débito, saldo, média, maior, menor) | ✅ |
 | R6 | `LIMITE_SUSPEITO = 10000.00` + listagem de suspeitas | ✅ |
