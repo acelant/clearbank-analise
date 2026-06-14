@@ -21,17 +21,26 @@ clearbank-analise/
 
 ## ▶️ Como Executar
 
-### Google Colab
+### Google Colab (recomendado)
+
 1. Acesse [colab.research.google.com](https://colab.research.google.com)
-2. Faça upload do `desafio-final.ipynb` e do `transacoes.csv` (ambos na mesma pasta/sessão)
-3. Vá em **Runtime → Run all** (ou `Ctrl+F9`)
+2. Faça upload do notebook: **File → Upload notebook → seleciona `desafio-final.ipynb`**
+3. Faça upload do CSV: no painel esquerdo, clique no ícone 📁 (Arquivos) → ícone de upload ⬆️ → seleciona `transacoes.csv`
+4. Execute tudo: **Runtime → Run all** (ou `Ctrl+F9`)
+5. Salve com as saídas: **File → Save** (ou `Ctrl+S`)
+
+> ⚠️ O Colab não persiste arquivos entre sessões. Se fechar e reabrir, faça o upload do `transacoes.csv` novamente antes de rodar.
+
+Para baixar os arquivos gerados (`relatorio.json` e `grafico.png`): painel de arquivos 📁 → botão direito no arquivo → **Download**.
 
 ### Jupyter Notebook local
+
 ```bash
 pip install jupyter pandas matplotlib
 jupyter notebook desafio-final.ipynb
 ```
-Execute as células em ordem (Shift+Enter) ou use **Kernel → Restart & Run All**.
+
+Execute as células em ordem (`Shift+Enter`) ou use **Kernel → Restart & Run All**.
 
 > **Pré-requisito:** `transacoes.csv` deve estar na mesma pasta do notebook.
 
@@ -46,6 +55,7 @@ Execute as células em ordem (Shift+Enter) ou use **Kernel → Restart & Run All
 | **`grafico.png`** | Gráfico de barras empilhadas (crédito/débito) + linha de saldo por mês |
 
 ### Exemplo de saída no terminal
+
 ```
 =============================================
    🏦  CLEARBANK — ANÁLISE FINANCEIRA
